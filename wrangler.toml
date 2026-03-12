@@ -2,6 +2,7 @@ name = "ice-casino"
 main = "worker.js"
 compatibility_date = "2024-01-01"
 workers_dev = true
+account_id = "1aaccaa18cfd27b18beaee23d76d5f1f"
 
 [build]
 command = ""
