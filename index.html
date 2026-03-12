@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ice Casino – Official Site | Up to €1500 Welcome Bonus</title>
+  <meta name="description" content="Play at Ice Casino – enjoy thousands of slots, live casino, sports betting and get up to €1500 + 270 free spins on your first deposits." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ice-blue: #00b4d8;
+      --ice-blue-light: #48cae4;
+      --ice-blue-dark: #0077b6;
+      --ice-deep: #023e8a;
+      --white: #ffffff;
+      --off-white: #f0f8ff;
+      --text-dark: #0d1b2a;
+      --text-muted: #4a6fa5;
+      --gold: #ffd60a;
+      --gold-dark: #e5a000;
+      --card-bg: #e8f4fd;
+      --nav-bg: rgba(2, 62, 138, 0.97);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 68px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      cursor: pointer;
+    }
+
+    .nav-logo-icon {
+      width: 42px; height: 42px;
+      background: linear-gradient(135deg, var(--ice-blue-light), var(--ice-blue-dark));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 0 15px rgba(0,180,216,0.5);
+    }
+
+    .nav-logo-text {
+      font-size: 22px; font-weight: 900; color: var(--white);
+      letter-spacing: -0.5px;
+    }
+    .nav-logo-text span { color: var(--ice-blue-light); }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 6px;
+      list-style: none;
+    }
+
+    .nav-links li a {
+      color: rgba(255,255,255,0.85);
+      font-weight: 700; font-size: 14px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-links li a:hover { background: rgba(255,255,255,0.12); color: var(--white); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark)) !important;
+      color: var(--text-dark) !important;
+      border-radius: 10px !important;
+      padding: 10px 20px !important;
+      font-weight: 900 !important;
+      box-shadow: 0 4px 15px rgba(255,214,10,0.4);
+      transition: transform 0.2s, box-shadow 0.2s !important;
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(255,214,10,0.5) !important; background: rgba(0,0,0,0) !important; }
+
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; transition: 0.3s; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #011627 0%, #023e8a 40%, #0077b6 70%, #00b4d8 100%);
+      display: flex; align-items: center;
+      padding: 90px 5% 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300b4d8' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.4;
+    }
+
+    /* Snowflakes */
+    .snowflakes { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .snowflake {
+      position: absolute; top: -20px; color: white;
+      font-size: 1em; opacity: 0;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% { opacity: 0.8; transform: translateY(0) rotate(0deg); }
+      100% { opacity: 0; transform: translateY(110vh) rotate(360deg); }
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 580px; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      padding: 8px 18px;
+      margin-bottom: 24px;
+      color: var(--ice-blue-light);
+      font-weight: 700; font-size: 13px;
+      backdrop-filter: blur(5px);
+    }
+    .hero-badge-dot { width: 8px; height: 8px; background: #4cff91; border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+    .hero h1 .accent { color: var(--gold); }
+
+    .hero-sub {
+      font-size: 18px; color: rgba(255,255,255,0.8);
+      margin-bottom: 36px; line-height: 1.6;
+    }
+
+    .hero-bonus-box {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      backdrop-filter: blur(10px);
+    }
+    .bonus-items { display: flex; gap: 24px; flex-wrap: wrap; }
+    .bonus-item { text-align: center; }
+    .bonus-item .amount { font-size: 28px; font-weight: 900; color: var(--gold); display: block; line-height: 1; }
+    .bonus-item .label { font-size: 12px; color: rgba(255,255,255,0.7); font-weight: 600; margin-top: 4px; }
+    .bonus-divider { width: 1px; background: rgba(255,255,255,0.2); align-self: stretch; }
+
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--text-dark);
+      font-weight: 900; font-size: 17px;
+      padding: 16px 40px;
+      border-radius: 50px;
+      border: none; cursor: pointer;
+      box-shadow: 0 6px 30px rgba(255,214,10,0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(255,214,10,0.55); }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      font-weight: 800; font-size: 17px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.5); }
+
+    .hero-visual {
+      position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
+      width: min(460px, 45vw);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-crystal {
+      width: 100%; aspect-ratio: 1;
+      background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.25), transparent 60%),
+                  linear-gradient(135deg, rgba(0,180,216,0.3), rgba(0,119,182,0.1));
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      animation: morph 8s ease-in-out infinite;
+      display: flex; align-items: center; justify-content: center;
+      font-size: clamp(80px, 12vw, 140px);
+      box-shadow: 0 0 80px rgba(0,180,216,0.3), inset 0 0 40px rgba(255,255,255,0.05);
+    }
+    @keyframes morph {
+      0%,100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+      50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--ice-deep);
+      padding: 18px 5%;
+      display: flex; align-items: center; justify-content: center;
+      gap: 40px; flex-wrap: wrap;
+    }
+    .trust-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.75); font-size: 13px; font-weight: 700; }
+    .trust-icon { font-size: 20px; }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 5%; }
+
+    .section-header { text-align: center; margin-bottom: 50px; }
+    .section-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--ice-blue), var(--ice-blue-dark));
+      color: white; font-size: 12px; font-weight: 800;
+      padding: 5px 16px; border-radius: 50px;
+      margin-bottom: 14px; letter-spacing: 1px; text-transform: uppercase;
+    }
+    .section-title { font-size: clamp(26px, 4vw, 42px); font-weight: 900; color: var(--text-dark); line-height: 1.15; }
+    .section-sub { font-size: 16px; color: var(--text-muted); margin-top: 10px; }
+
+    /* ── BONUSES ── */
+    .bonuses { background: var(--off-white); }
+
+    .bonus-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+
+    .bonus-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,119,182,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .bonus-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,119,182,0.18); }
+
+    .bonus-card-header {
+      background: linear-gradient(135deg, var(--ice-blue-dark), var(--ice-deep));
+      padding: 28px 24px 20px;
+      position: relative; overflow: hidden;
+    }
+    .bonus-card-header::after {
+      content: '';
+      position: absolute; bottom: -20px; right: -20px;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+    .bonus-num { font-size: 11px; font-weight: 800; color: rgba(255,255,255,0.6); letter-spacing: 2px; text-transform: uppercase; }
+    .bonus-title { font-size: 20px; font-weight: 900; color: white; margin: 6px 0; }
+    .bonus-amount { font-size: 36px; font-weight: 900; color: var(--gold); line-height: 1; }
+    .bonus-amount-sub { font-size: 13px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+    .bonus-card-body { padding: 20px 24px 24px; }
+    .bonus-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .bonus-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; color: var(--text-dark); }
+    .bonus-features li::before { content: '✓'; color: var(--ice-blue-dark); font-weight: 900; font-size: 16px; }
+
+    .btn-claim {
+      width: 100%;
+      background: linear-gradient(135deg, var(--ice-blue), var(--ice-blue-dark));
+      color: white;
+      border: none; border-radius: 12px;
+      padding: 14px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px; font-weight: 800;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-claim:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* ── GAMES ── */
+    .games { background: var(--white); }
+
+    .games-tabs { display: flex; gap: 8px; justify-content: center; margin-bottom: 36px; flex-wrap: wrap; }
+    .games-tab {
+      padding: 10px 22px; border-radius: 50px;
+      font-weight: 700; font-size: 14px;
+      cursor: pointer; border: 2px solid #d0e8f5;
+      color: var(--text-muted); background: white;
+      transition: all 0.2s;
+    }
+    .games-tab.active, .games-tab:hover {
+      background: linear-gradient(135deg, var(--ice-blue), var(--ice-blue-dark));
+      color: white; border-color: transparent;
+      box-shadow: 0 4px 15px rgba(0,180,216,0.3);
+    }
+
+    .games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 18px; }
+
+    .game-card {
+      border-radius: 16px; overflow: hidden;
+      cursor: pointer; position: relative;
+      aspect-ratio: 3/4;
+      transition: transform 0.3s;
+      background: var(--card-bg);
+      box-shadow: 0 2px 12px rgba(0,119,182,0.1);
+    }
+    .game-card:hover { transform: translateY(-4px) scale(1.02); }
+    .game-card:hover .game-overlay { opacity: 1; }
+
+    .game-thumb {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 10px;
+    }
+    .game-emoji { font-size: 48px; }
+    .game-name { font-weight: 800; font-size: 13px; color: var(--ice-blue-dark); text-align: center; padding: 0 10px; }
+    .game-provider { font-size: 11px; color: var(--text-muted); }
+
+    .game-badge {
+      position: absolute; top: 10px; left: 10px;
+      background: var(--gold); color: var(--text-dark);
+      font-size: 10px; font-weight: 900;
+      padding: 3px 8px; border-radius: 50px;
+      letter-spacing: 0.5px;
+    }
+    .game-badge.live { background: #ff4d4d; color: white; }
+    .game-badge.new { background: #4cff91; color: var(--text-dark); }
+
+    .game-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,62,138,0.95) 0%, rgba(0,119,182,0.7) 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .game-overlay .play-btn {
+      background: var(--gold); color: var(--text-dark);
+      font-weight: 900; font-size: 15px;
+      padding: 12px 28px; border-radius: 50px;
+      border: none; cursor: pointer;
+    }
+    .game-overlay .demo-btn {
+      color: rgba(255,255,255,0.8); font-size: 13px; font-weight: 700; cursor: pointer;
+    }
+
+    .games-more { text-align: center; margin-top: 40px; }
+
+    /* ── LIVE CASINO ── */
+    .live-casino {
+      background: linear-gradient(160deg, #011627 0%, #023e8a 50%, #0077b6 100%);
+      color: white;
+    }
+    .live-casino .section-title { color: white; }
+    .live-casino .section-sub { color: rgba(255,255,255,0.7); }
+
+    .live-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+
+    .live-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px; overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(10px);
+    }
+    .live-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+
+    .live-card-img {
+      height: 150px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 60px;
+      background: rgba(255,255,255,0.04);
+      position: relative;
+    }
+    .live-indicator {
+      position: absolute; top: 12px; right: 12px;
+      background: #ff4d4d; color: white;
+      font-size: 11px; font-weight: 800;
+      padding: 4px 10px; border-radius: 50px;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .live-dot { width: 7px; height: 7px; background: white; border-radius: 50%; animation: pulse 1.5s infinite; }
+
+    .live-card-body { padding: 18px 20px 22px; }
+    .live-card-title { font-size: 17px; font-weight: 800; margin-bottom: 6px; }
+    .live-card-meta { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 14px; }
+    .live-card-players { font-size: 12px; color: var(--ice-blue-light); font-weight: 700; }
+
+    /* ── FEATURES ── */
+    .features { background: var(--off-white); }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+
+    .feature-card {
+      background: white; border-radius: 20px;
+      padding: 30px 24px;
+      box-shadow: 0 4px 20px rgba(0,119,182,0.07);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .feature-card:hover { transform: translateY(-4px); }
+    .feature-icon { font-size: 44px; margin-bottom: 16px; display: block; }
+    .feature-title { font-size: 18px; font-weight: 800; color: var(--text-dark); margin-bottom: 10px; }
+    .feature-text { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── PAYMENTS ── */
+    .payments { background: white; }
+    .payments-grid {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 16px; margin-top: 40px;
+    }
+    .payment-chip {
+      background: var(--off-white);
+      border: 1px solid #d0e8f5;
+      border-radius: 12px;
+      padding: 14px 24px;
+      font-weight: 800; font-size: 14px;
+      color: var(--text-dark);
+      display: flex; align-items: center; gap: 10px;
+      transition: box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .payment-chip:hover { box-shadow: 0 4px 15px rgba(0,119,182,0.15); }
+    .payment-chip-icon { font-size: 24px; }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--ice-blue-dark), var(--ice-deep));
+      padding: 80px 5%;
+      text-align: center;
+    }
+    .cta-banner h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 900; color: white; margin-bottom: 14px; }
+    .cta-banner p { font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 36px; }
+    .cta-banner .btn-primary { font-size: 20px; padding: 18px 56px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #010d18;
+      color: rgba(255,255,255,0.6);
+      padding: 60px 5% 40px;
+    }
+    .footer-top {
+      display: grid; grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 40px; margin-bottom: 40px;
+    }
+    .footer-brand { }
+    .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .footer-logo-icon {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--ice-blue-light), var(--ice-blue-dark));
+      border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px;
+    }
+    .footer-logo-text { font-size: 20px; font-weight: 900; color: white; }
+    .footer-logo-text span { color: var(--ice-blue-light); }
+    .footer-desc { font-size: 13px; line-height: 1.7; max-width: 280px; }
+
+    .footer-col h4 { font-size: 14px; font-weight: 800; color: white; margin-bottom: 18px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links li a { font-size: 13px; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .footer-links li a:hover { color: var(--ice-blue-light); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 30px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 20px;
+    }
+    .footer-legal { font-size: 12px; line-height: 1.6; max-width: 600px; }
+    .footer-badges { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .footer-badge {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px; padding: 6px 14px;
+      font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.5);
+    }
+
+    .age-badge {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 900; color: white;
+    }
+
+    .responsible-text {
+      font-size: 12px; color: rgba(255,255,255,0.4);
+      text-align: center; margin-top: 20px;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .hero-visual { display: none; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .footer-top { grid-template-columns: 1fr; }
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-secondary { text-align: center; }
+    }
+
+    /* ── RESPONSIVE BONUS ── */
+    @media (max-width: 500px) {
+      .bonus-items { gap: 14px; }
+      .bonus-item .amount { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Snowflakes -->
+<div class="snowflakes" id="snowflakes"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="https://icecasino.com/en" class="nav-logo">
+    <div class="nav-logo-icon">🧊</div>
+    <div class="nav-logo-text">Ice<span>Casino</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://icecasino.com/en">Casino</a></li>
+    <li><a href="https://icecasino.com/en">Live Casino</a></li>
+    <li><a href="https://icecasino.com/en">Sports</a></li>
+    <li><a href="https://icecasino.com/en">Promotions</a></li>
+    <li><a href="https://icecasino.com/en">VIP</a></li>
+    <li><a href="https://icecasino.com/en" class="nav-cta">Join Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="window.location.href='https://icecasino.com/en'">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      🏆 Over 6,000 Games Available Now
+    </div>
+    <h1>Your Coolest<br/><span class="accent">Casino</span><br/>Experience</h1>
+    <p class="hero-sub">Claim up to <strong style="color:#ffd60a">€1500 + 270 Free Spins</strong> across your first three deposits. Play slots, live casino & sports betting.</p>
+
+    <div class="hero-bonus-box">
+      <div class="bonus-items">
+        <div class="bonus-item">
+          <span class="amount">€500</span>
+          <span class="label">1st Deposit</span>
+        </div>
+        <div class="bonus-divider"></div>
+        <div class="bonus-item">
+          <span class="amount">€1000</span>
+          <span class="label">2nd & 3rd</span>
+        </div>
+        <div class="bonus-divider"></div>
+        <div class="bonus-item">
+          <span class="amount">270</span>
+          <span class="label">Free Spins</span>
+        </div>
+        <div class="bonus-divider"></div>
+        <div class="bonus-item">
+          <span class="amount">6000+</span>
+          <span class="label">Games</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-btns">
+      <a href="https://icecasino.com/en" class="btn-primary">🎁 Claim Bonus Now</a>
+      <a href="https://icecasino.com/en" class="btn-secondary">View Games</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-crystal">🎰</div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">🔒</span> SSL Secured</div>
+  <div class="trust-item"><span class="trust-icon">⚡</span> Instant Withdrawals</div>
+  <div class="trust-item"><span class="trust-icon">🎮</span> 6,000+ Games</div>
+  <div class="trust-item"><span class="trust-icon">💳</span> 50+ Payment Methods</div>
+  <div class="trust-item"><span class="trust-icon">📞</span> 24/7 Support</div>
+  <div class="trust-item"><span class="trust-icon">🏆</span> Licensed & Regulated</div>
+</div>
+
+<!-- BONUSES -->
+<section class="bonuses">
+  <div class="section-header">
+    <div class="section-tag">Welcome Package</div>
+    <h2 class="section-title">Incredible Bonuses Await You</h2>
+    <p class="section-sub">Start your icy adventure with our three-part welcome package</p>
+  </div>
+
+  <div class="bonus-cards">
+    <!-- Bonus 1 -->
+    <div class="bonus-card" onclick="window.location.href='https://icecasino.com/en'">
+      <div class="bonus-card-header">
+        <div class="bonus-num">Bonus 01</div>
+        <div class="bonus-title">First Deposit</div>
+        <div class="bonus-amount">100% + €500</div>
+        <div class="bonus-amount-sub">+ 200 Free Spins</div>
+      </div>
+      <div class="bonus-card-body">
+        <ul class="bonus-features">
+          <li>100% match up to €500</li>
+          <li>200 free spins on slots</li>
+          <li>Min. deposit just €20</li>
+          <li>Wagering: 30x bonus</li>
+        </ul>
+        <button class="btn-claim">Claim Bonus →</button>
+      </div>
+    </div>
+
+    <!-- Bonus 2 -->
+    <div class="bonus-card" onclick="window.location.href='https://icecasino.com/en'">
+      <div class="bonus-card-header" style="background: linear-gradient(135deg, #005f73, #0077b6);">
+        <div class="bonus-num">Bonus 02</div>
+        <div class="bonus-title">Second Deposit</div>
+        <div class="bonus-amount">75% + €750</div>
+        <div class="bonus-amount-sub">+ 50 Free Spins</div>
+      </div>
+      <div class="bonus-card-body">
+        <ul class="bonus-features">
+          <li>75% match up to €750</li>
+          <li>50 extra free spins</li>
+          <li>Valid on all slots</li>
+          <li>Wagering: 35x bonus</li>
+        </ul>
+        <button class="btn-claim">Claim Bonus →</button>
+      </div>
+    </div>
+
+    <!-- Bonus 3 -->
+    <div class="bonus-card" onclick="window.location.href='https://icecasino.com/en'">
+      <div class="bonus-card-header" style="background: linear-gradient(135deg, #184e77, #1a6b9b);">
+        <div class="bonus-num">Bonus 03</div>
+        <div class="bonus-title">Third Deposit</div>
+        <div class="bonus-amount">50% + €250</div>
+        <div class="bonus-amount-sub">+ 20 Free Spins</div>
+      </div>
+      <div class="bonus-card-body">
+        <ul class="bonus-features">
+          <li>50% match up to €250</li>
+          <li>20 extra free spins</li>
+          <li>Live casino eligible</li>
+          <li>Wagering: 40x bonus</li>
+        </ul>
+        <button class="btn-claim">Claim Bonus →</button>
+      </div>
+    </div>
+
+    <!-- VIP -->
+    <div class="bonus-card" onclick="window.location.href='https://icecasino.com/en'">
+      <div class="bonus-card-header" style="background: linear-gradient(135deg, #1b0042, #4a0080);">
+        <div class="bonus-num">VIP Club</div>
+        <div class="bonus-title">Ice VIP</div>
+        <div class="bonus-amount">Exclusive</div>
+        <div class="bonus-amount-sub">Rewards & Cashback</div>
+      </div>
+      <div class="bonus-card-body">
+        <ul class="bonus-features">
+          <li>Weekly cashback up to 20%</li>
+          <li>Personal account manager</li>
+          <li>Faster withdrawals</li>
+          <li>Exclusive tournaments</li>
+        </ul>
+        <button class="btn-claim" style="background: linear-gradient(135deg, #9b59b6, #6c3483);">Join VIP →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GAMES -->
+<section class="games">
+  <div class="section-header">
+    <div class="section-tag">Game Lobby</div>
+    <h2 class="section-title">6,000+ Premium Games</h2>
+    <p class="section-sub">From top providers including NetEnt, Pragmatic Play, Evolution and more</p>
+  </div>
+
+  <div class="games-tabs">
+    <div class="games-tab active">🎰 All Games</div>
+    <div class="games-tab">🌟 Popular</div>
+    <div class="games-tab">🃏 Slots</div>
+    <div class="games-tab">🃎 Table Games</div>
+    <div class="games-tab">🎲 Jackpots</div>
+    <div class="games-tab">⚽ Sports</div>
+  </div>
+
+  <div class="games-grid" id="gamesGrid">
+    <!-- populated by JS -->
+  </div>
+
+  <div class="games-more">
+    <a href="https://icecasino.com/en" class="btn-primary" style="font-size:16px; padding:14px 40px;">Browse All 6,000+ Games →</a>
+  </div>
+</section>
+
+<!-- LIVE CASINO -->
+<section class="live-casino">
+  <div class="section-header">
+    <div class="section-tag" style="background: rgba(255,255,255,0.15);">🔴 Live Casino</div>
+    <h2 class="section-title">Real Dealers, Real Thrills</h2>
+    <p class="section-sub">Join hundreds of live tables streaming 24/7 from professional studios</p>
+  </div>
+
+  <div class="live-grid">
+    <div class="live-card" onclick="window.location.href='https://icecasino.com/en'">
+      <div class="live-card-img">
+        🃏
+        <div class="live-indicator"><span class="live-dot"></span> LIVE</div>
+      </div>
+      <div class="live-card-body">
+        <div class="live-card-title">Lightning Roulette</div>
+        <div class="live-card-meta">Evolution Gaming • Classic Roulette</div>
+        <div class="live-card-players">👥 342 players online</div>
+      </div>
+    </div>
+    <div class="live-card" onclick="window.location.href='https://icecasino.com/en'">
+      <div class="live-card-img">
+        🃎
+        <div class="live-indicator"><span class="live-dot"></span> LIVE</div>
+      </div>
+      <div class="live-card-body">
+        <div class="live-card-title">Speed Baccarat</div>
+        <div class="live-card-meta">Pragmatic Play • Baccarat</div>
+        <div class="live-card-players">👥 215 players online</div>
+      </div>
+    </div>
+    <div class="live-card" onclick="window.location.href='https://icecasino.com/en'">
+      <div class="live-card-img">
+        🎰
+        <div class="live-indicator"><span class="live-dot"></span> LIVE</div>
+      </div>
+      <div class="live-card-body">
+        <div class="live-card-title">Crazy Time</div>
+        <div class="live-card-meta">Evolution Gaming • Game Shows</div>
+        <div class="live-card-players">👥 1,204 players online</div>
+      </div>
+    </div>
+    <div class="live-card" onclick="window.location.href='https://icecasino.com/en'">
+      <div class="live-card-img">
+        ♠️
+        <div class="live-indicator"><span class="live-dot"></span> LIVE</div>
+      </div>
+      <div class="live-card-body">
+        <div class="live-card-title">Infinite Blackjack</div>
+        <div class="live-card-meta">Evolution Gaming • Blackjack</div>
+        <div class="live-card-players">👥 89 players online</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="section-header">
+    <div class="section-tag">Why Ice Casino</div>
+    <h2 class="section-title">Everything You Need to Win</h2>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="feature-icon">⚡</span>
+      <div class="feature-title">Lightning Fast Payouts</div>
+      <p class="feature-text">Withdrawals processed within minutes. Get your winnings fast, every time, guaranteed.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🔒</span>
+      <div class="feature-title">Bank-Level Security</div>
+      <p class="feature-text">256-bit SSL encryption and advanced fraud protection keeps your funds and data safe.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">📱</span>
+      <div class="feature-title">Mobile Optimised</div>
+      <p class="feature-text">Seamless experience on any device. Play on iOS, Android or desktop – no app required.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🎁</span>
+      <div class="feature-title">Daily Promotions</div>
+      <p class="feature-text">New bonuses, free spins, and tournaments launched every day for active players.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🌍</span>
+      <div class="feature-title">Multi-Currency</div>
+      <p class="feature-text">Accepts EUR, USD, GBP, BTC, ETH and many more currencies and crypto assets.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🎧</span>
+      <div class="feature-title">24/7 Live Support</div>
+      <p class="feature-text">Expert support agents available around the clock via live chat, email and phone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENTS -->
+<section class="payments">
+  <div class="section-header">
+    <div class="section-tag">Payments</div>
+    <h2 class="section-title">50+ Payment Methods</h2>
+    <p class="section-sub">Deposit and withdraw using your preferred method</p>
+  </div>
+  <div class="payments-grid">
+    <div class="payment-chip" onclick="window.location.href='https://icecasino.com/en'">
+      <span class="payment-chip-icon">💳</span> Visa
+    </div>
+    <div class="payment-chip" onclick="window.location.href='https://icecasino.com/en'">
+      <span class="payment-chip-icon">💳</span> Mastercard
+    </div>
+    <div class="payment-chip" onclick="window.location.href='https://icecasino.com/en'">
+      <span class="payment-chip-icon">🏦</span> Bank Transfer
+    </div>
+    <div class="payment-chip" onclick="window.location.href='https://icecasino.com/en'">
+      <span class="payment-chip-icon">₿</span> Bitcoin
+    </div>
+    <div class="payment-chip" onclick="window.location.href='https://icecasino.com/en'">
+      <span class="payment-chip-icon">⟠</span> Ethereum
+    </div>
+    <div class="payment-chip" onclick="window.location.href='https://icecasino.com/en'">
+      <span class="payment-chip-icon">💰</span> Skrill
+    </div>
+    <div class="payment-chip" onclick="window.location.href='https://icecasino.com/en'">
+      <span class="payment-chip-icon">💶</span> Neteller
+    </div>
+    <div class="payment-chip" onclick="window.location.href='https://icecasino.com/en'">
+      <span class="payment-chip-icon">🪙</span> Litecoin
+    </div>
+    <div class="payment-chip" onclick="window.location.href='https://icecasino.com/en'">
+      <span class="payment-chip-icon">📲</span> MuchBetter
+    </div>
+    <div class="payment-chip" onclick="window.location.href='https://icecasino.com/en'">
+      <span class="payment-chip-icon">🔵</span> Paysafecard
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>Ready to Play?</h2>
+  <p>Join thousands of players winning big at Ice Casino every day</p>
+  <a href="https://icecasino.com/en" class="btn-primary">🎁 Get My €1500 Bonus</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-icon">🧊</div>
+        <div class="footer-logo-text">Ice<span>Casino</span></div>
+      </div>
+      <p class="footer-desc">Ice Casino is a premium online gaming destination offering thousands of slots, live casino games, and sports betting in a safe and licensed environment.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Casino</h4>
+      <ul class="footer-links">
+        <li><a href="https://icecasino.com/en">Slots</a></li>
+        <li><a href="https://icecasino.com/en">Live Casino</a></li>
+        <li><a href="https://icecasino.com/en">Table Games</a></li>
+        <li><a href="https://icecasino.com/en">Jackpots</a></li>
+        <li><a href="https://icecasino.com/en">Game Providers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Promotions</h4>
+      <ul class="footer-links">
+        <li><a href="https://icecasino.com/en">Welcome Bonus</a></li>
+        <li><a href="https://icecasino.com/en">Free Spins</a></li>
+        <li><a href="https://icecasino.com/en">Cashback</a></li>
+        <li><a href="https://icecasino.com/en">Tournaments</a></li>
+        <li><a href="https://icecasino.com/en">VIP Program</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul class="footer-links">
+        <li><a href="https://icecasino.com/en">Live Chat</a></li>
+        <li><a href="https://icecasino.com/en">FAQ</a></li>
+        <li><a href="https://icecasino.com/en">Terms & Conditions</a></li>
+        <li><a href="https://icecasino.com/en">Privacy Policy</a></li>
+        <li><a href="https://icecasino.com/en">Responsible Gambling</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      Ice Casino is operated under a valid gaming licence. Gambling can be addictive — please play responsibly.
+      This website is intended for entertainment purposes only for users aged 18+.
+    </div>
+    <div class="footer-badges">
+      <div class="age-badge">18+</div>
+      <div class="footer-badge">Licensed</div>
+      <div class="footer-badge">SSL Secured</div>
+      <div class="footer-badge">Responsible Gaming</div>
+    </div>
+  </div>
+
+  <p class="responsible-text">
+    🔞 18+ only &nbsp;|&nbsp; Please gamble responsibly &nbsp;|&nbsp;
+    <a href="https://icecasino.com/en" style="color: rgba(255,255,255,0.4);">icecasino.com</a>
+  </p>
+</footer>
+
+<script>
+  // Snowflakes
+  const sf = document.getElementById('snowflakes');
+  const symbols = ['❄', '❅', '❆', '•'];
+  for (let i = 0; i < 30; i++) {
+    const el = document.createElement('div');
+    el.className = 'snowflake';
+    el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    el.style.cssText = `
+      left: ${Math.random() * 100}%;
+      font-size: ${Math.random() * 16 + 8}px;
+      animation-duration: ${Math.random() * 8 + 6}s;
+      animation-delay: ${Math.random() * 10}s;
+      opacity: ${Math.random() * 0.5 + 0.2};
+    `;
+    sf.appendChild(el);
+  }
+
+  // Games grid
+  const games = [
+    { emoji: '🌋', name: 'Gates of Olympus', provider: 'Pragmatic Play', badge: 'HOT' },
+    { emoji: '🍭', name: 'Sweet Bonanza', provider: 'Pragmatic Play', badge: 'HOT' },
+    { emoji: '🐺', name: 'Wolf Gold', provider: 'Pragmatic Play', badge: null },
+    { emoji: '💎', name: 'Starburst', provider: 'NetEnt', badge: null },
+    { emoji: '🌊', name: 'Big Bass Splash', provider: 'Pragmatic Play', badge: 'NEW', badgeClass: 'new' },
+    { emoji: '🔱', name: 'Book of Dead', provider: 'Play\'n GO', badge: null },
+    { emoji: '🦁', name: 'The Dog House', provider: 'Pragmatic Play', badge: 'HOT' },
+    { emoji: '🎲', name: 'Mega Moolah', provider: 'Microgaming', badge: 'JP', badgeClass: 'live' },
+    { emoji: '🌺', name: 'Aloha Cluster', provider: 'NetEnt', badge: null },
+    { emoji: '🔮', name: 'Reactoonz', provider: 'Play\'n GO', badge: 'NEW', badgeClass: 'new' },
+    { emoji: '🏺', name: 'Book of Ra', provider: 'Novomatic', badge: null },
+    { emoji: '⚡', name: 'Thunder Struck II', provider: 'Microgaming', badge: null },
+  ];
+
+  const grid = document.getElementById('gamesGrid');
+  games.forEach(g => {
+    grid.innerHTML += `
+      <div class="game-card" onclick="window.location.href='https://icecasino.com/en'">
+        ${g.badge ? `<div class="game-badge ${g.badgeClass || ''}">${g.badge}</div>` : ''}
+        <div class="game-thumb">
+          <div class="game-emoji">${g.emoji}</div>
+          <div class="game-name">${g.name}</div>
+          <div class="game-provider">${g.provider}</div>
+        </div>
+        <div class="game-overlay">
+          <button class="play-btn">▶ Play Now</button>
+          <div class="demo-btn">Try Demo</div>
+        </div>
+      </div>`;
+  });
+
+  // Games tabs (all redirect)
+  document.querySelectorAll('.games-tab').forEach(tab => {
+    tab.addEventListener('click', () => window.location.href = 'https://icecasino.com/en');
+  });
+</script>
+</body>
+</html>
